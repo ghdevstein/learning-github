@@ -1,9 +1,10 @@
+# Organization
+# Repository
 # Workflow
 # Job
 # Step
 
-# Repository
-# Organization
+
 
 name: 03 - Variables
 on:
@@ -13,10 +14,18 @@ jobs:
         name: variables demo
         runs-on: ubuntu-latest
         env:
-          MY_VAR: "This is a Job variable."
+          MY_VAR1: "This is a Job variable."
         steps:
             - name: my step variables
               run: |
-                echo "$MY_VAR"
+                echo "$MY_VAR_2"
               env:
-                MY_VAR: "This is a Step variable."  
+                MY_VAR_2: "This is a Step variable."  
+
+            - name: printing MY_VAR2 step variables
+              run: |
+                echo "$MY_VAR_2"
+                
+            - name: printing MY_VAR1 job variables
+              run: |
+                echo "$MY_VAR1"
