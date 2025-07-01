@@ -1,3 +1,5 @@
+# Jobs not necessarily run in same machine
+
 
 name: 04 - Value Share Workflow
 on:
@@ -10,8 +12,13 @@ jobs:
         steps:
             - name: generate a report.txt file
               run: |
-                echo "This is a report file" > report.txt       
-            
+                echo "This is a report file" > report.txt      
+
+            - uses: actions/upload-artifact@v4
+              with:
+                name: my-artifact
+                path: report.txt
+
     my-variables-job-02:
         name: variables demo - 02
         runs-on: ubuntu-latest
@@ -19,4 +26,8 @@ jobs:
             - name: read the report.txt file
               run: |
                 cat report.txt
+
+            - uses: actions/download-artifact@v4
+              with:
+                name: my-artifact                
 
