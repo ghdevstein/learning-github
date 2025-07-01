@@ -15,8 +15,6 @@ jobs:
                 echo ${{ github.sha }}
 
             - name: Dump job context
-              env:
-                GITHUB_CONTEXT: ${{ toJson(github) }}
               run: |
-                echo GITHUB_CONTEXT
+                echo "${{ toJson(job) }}"
                 
