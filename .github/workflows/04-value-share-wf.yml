@@ -12,7 +12,7 @@ jobs:
               run: |
                 echo "This is a report file" > report.txt       
             
-   my-variables-job-02:
+    my-variables-job-02:
         name: variables demo - 02
         runs-on: ubuntu-latest
         steps:
