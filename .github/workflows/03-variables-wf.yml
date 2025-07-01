@@ -2,7 +2,7 @@
 # Repository
 # Workflow
 # Job
-# Step
+# Step - Precedence is high but visibility is low
 
 
 
@@ -10,7 +10,7 @@ name: 03 - Variables
 on:
   push:
 jobs:
-    my-variables-job:
+    my-variables-job-01:
         name: variables demo
         runs-on: ubuntu-latest
         env:
@@ -26,6 +26,14 @@ jobs:
               run: |
                 echo "$MY_VAR_2"
                 
+            - name: printing MY_VAR1 job variables
+              run: |
+                echo "$MY_VAR1"
+                
+    my-variables-job-02:
+        name: variables demo
+        runs-on: ubuntu-latest
+        steps:
             - name: printing MY_VAR1 job variables
               run: |
                 echo "$MY_VAR1"
