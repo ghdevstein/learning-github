@@ -1,0 +1,22 @@
+
+name: 04 - Value Share Workflow
+on:
+  push:
+
+jobs:
+    my-variables-job-01:
+        name: variables demo - 01
+        runs-on: ubuntu-latest
+        steps:
+            - name: generate a report.txt file
+              run: |
+                echo "This is a report file" > report.txt       
+            
+   my-variables-job-02:
+        name: variables demo - 02
+        runs-on: ubuntu-latest
+        steps:
+            - name: read the report.txt file
+              run: |
+                cat report.txt
+

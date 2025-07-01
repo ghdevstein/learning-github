@@ -34,7 +34,7 @@ jobs:
             
             - name: printing MY_VAR3 wf variables
               run: |
-                echo "$MY_VAR3"                
+                echo "$MY_VAR3"       
             
             - name: printing Repostitory variables
               run: |
