@@ -12,9 +12,11 @@ jobs:
     my-variables-job:
         name: variables demo
         runs-on: ubuntu-latest
+        env:
+          MY_VAR: "This is a Job variable."
         steps:
             - name: my step variables
               run: |
                 echo "$MY_VAR"
               env:
-                MY_VAR: "Hello, world! This is a variable."  
+                MY_VAR: "This is a Step variable."  
