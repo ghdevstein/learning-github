@@ -9,6 +9,8 @@
 name: 03 - Variables
 on:
   push:
+env:
+  MY_VAR3: "This is a Global variable."    
 jobs:
     my-variables-job-01:
         name: variables demo - 01
@@ -30,8 +32,11 @@ jobs:
               run: |
                 echo "$MY_VAR1"
             
-            - name: sleep 30
-              run: sleep 30
+            - name: printing MY_VAR3 wf variables
+              run: |
+                echo "$MY_VAR3"                
+            # - name: sleep 30
+            #   run: sleep 30
 
     my-variables-job-02:
         name: variables demo - 02
@@ -40,6 +45,7 @@ jobs:
             - name: printing MY_VAR1 job variables
               run: |
                 echo "$MY_VAR1"
-                
-            - name: sleep 30
-              run: sleep 30                
+
+            - name: printing MY_VAR3 wf variables
+              run: |
+                echo "$MY_VAR3"              
