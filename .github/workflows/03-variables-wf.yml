@@ -1,4 +1,4 @@
-# Organization
+# Organization - Precedence is low but visibility is high
 # Repository
 # Workflow
 # Job
@@ -11,7 +11,7 @@ on:
   push:
 jobs:
     my-variables-job-01:
-        name: variables demo
+        name: variables demo - 01
         runs-on: ubuntu-latest
         env:
           MY_VAR1: "This is a Job variable."
@@ -29,11 +29,17 @@ jobs:
             - name: printing MY_VAR1 job variables
               run: |
                 echo "$MY_VAR1"
-                
+            
+            - name: sleep 30
+              run: sleep 30
+
     my-variables-job-02:
-        name: variables demo
+        name: variables demo - 02
         runs-on: ubuntu-latest
         steps:
             - name: printing MY_VAR1 job variables
               run: |
                 echo "$MY_VAR1"
+                
+            - name: sleep 30
+              run: sleep 30                
