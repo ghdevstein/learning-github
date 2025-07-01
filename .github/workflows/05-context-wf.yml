@@ -1,0 +1,19 @@
+name: 05 - Context Workflow
+on:
+  push:
+
+jobs:
+    my-context:
+        name: context demo
+        runs-on: ubuntu-latest
+        steps:
+            - name: Run a multi-line script
+              run: |
+                echo ${{ github.event_name }}
+                echo ${{ github.actor }}
+                echo ${{ github.repository }}
+                echo ${{ github.sha }}
+
+            - name: Dump job context
+              run: echo ${{ toJson(job) }}
+                
