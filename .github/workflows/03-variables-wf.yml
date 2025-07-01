@@ -35,17 +35,21 @@ jobs:
             - name: printing MY_VAR3 wf variables
               run: |
                 echo "$MY_VAR3"                
-            # - name: sleep 30
-            #   run: sleep 30
-
-    my-variables-job-02:
-        name: variables demo - 02
-        runs-on: ubuntu-latest
-        steps:
-            - name: printing MY_VAR1 job variables
+            
+            - name: printing Repostitory variables
               run: |
-                echo "$MY_VAR1"
+                echo "My user is ${{ vars.MY_USER }}"                
+                echo "My secret is ${{ secrets.MY_PASSWORD }}"  
 
-            - name: printing MY_VAR3 wf variables
-              run: |
-                echo "$MY_VAR3"              
+
+    # my-variables-job-02:
+    #     name: variables demo - 02
+    #     runs-on: ubuntu-latest
+    #     steps:
+    #         - name: printing MY_VAR1 job variables
+    #           run: |
+    #             echo "$MY_VAR1"
+
+    #         - name: printing MY_VAR3 wf variables
+    #           run: |
+    #             echo "$MY_VAR3"              
