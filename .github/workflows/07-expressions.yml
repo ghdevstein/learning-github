@@ -38,6 +38,7 @@ jobs:
                 echo "${{ toJson(github) }}"
                 echo "${{ toJson(env) }}"
                 echo "${{ toJson(secrets) }}"
+                ${{ secrets.}}
               
 
     other-branch-job:
