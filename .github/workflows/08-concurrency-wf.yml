@@ -5,6 +5,9 @@ jobs:
     ConcurrentJob:
         name: Concurrency Demo Job
         runs-on: ubuntu-latest
+        concurrency:
+            group: ABCD
+            cancel-in-progress: true
         steps:
             - name: Run a multi-line script
               run: |
@@ -15,4 +18,4 @@ jobs:
               run: echo Hello, world! single line
 
             - name: Run a single-line script
-              run: sleep 60
+              run: sleep 600
