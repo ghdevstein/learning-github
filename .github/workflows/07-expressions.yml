@@ -31,6 +31,13 @@ jobs:
                 echo "abcd=ABCD : ${{ 'abcd' == 'ABCD' }}"
                 echo "contains( 'abcd', 'bc' ) : ${{ contains('abcd', 'bc') }}"
                 echo "startsWith( 'abcd', 'ab' ) : ${{ startsWith('abcd', 'ab') }}"
+
+            - name: Dump job context
+              run: |
+                echo "${{ toJson(job) }}"
+                echo "${{ toJson(github) }}"
+                echo "${{ toJson(env) }}"
+                echo "${{ toJson(secrets) }}"
               
 
     other-branch-job:
