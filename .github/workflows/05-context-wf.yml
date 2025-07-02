@@ -6,6 +6,9 @@ jobs:
     my-context:
         name: context demo
         runs-on: ubuntu-latest
+        group: context-demo
+          max-parallel: 1
+        timeout-minutes: 10
         steps:
             - name: Run a multi-line script
               run: |
