@@ -1,7 +1,17 @@
 name: 08-manual-workflow
 on:
   workflow_dispatch:
-
+    inputs:
+      value_of_A:
+        description: 'value of A'
+        required: true
+        type: number
+        default: 1
+      value_of_name:
+        description: 'value of name'
+        required: true
+        type: string
+        default: "Vinodh" 
 jobs:
   manual-job:
     runs-on: ubuntu-latest
