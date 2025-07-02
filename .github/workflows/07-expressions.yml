@@ -21,6 +21,16 @@ jobs:
               if: false
               run: echo Hello, world! single line
 
+            - name: Expressions
+              run: |
+                echo "1>2 : ${{ 1 > 2}}"
+                echo "1=2 : ${{ 1 == 2}}"
+                echo "1<2 : ${{ 1 < 2}}"
+                echo "true=false : ${{ true == false }}"
+                echo "1<2 and 3>2 : ${{ 1<2 && 3>2}}"
+                echo "abcd=ABCD : ${{ 'abcd' == 'ABCD' }}"
+                echo "contains( 'abcd', 'bc' ) : ${{ contains('abcd', 'bc') }}"
+                echo "startsWith( 'abcd', 'ab' ) : ${{ startsWith('abcd', 'ab') }}"
               
 
     other-branch-job:
