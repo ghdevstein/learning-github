@@ -1,5 +1,6 @@
 name: 08-manual-workflow
 on:
+  repository_dispatch:
   workflow_dispatch:
     inputs:
       value_of_A:
