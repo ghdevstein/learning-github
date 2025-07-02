@@ -20,3 +20,5 @@ jobs:
         run: |
           echo Hello, world!
           echo This is a manual workflow.
+          echo "Value of A: ${{ github.event.inputs.value_of_A }}"
+          echo "Value of name: ${{ github.event.inputs.value_of_name }}"
