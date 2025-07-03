@@ -6,12 +6,10 @@ jobs:
         strategy:
             matrix:
                 os: [ubuntu-latest, ubuntu-22.04, ubuntu-18.04]
-        name: my-first-job
+                image: [python:3.9, python:3.8, python:3.7]
+        name: job-${{ matrix.os }}-${{ matrix.image }}
         runs-on: ${{ matrix.os }}
         steps:
-            - name: Checkout
-              uses: actions/checkout@v4
-              
             - name: Run a multi-line script
               run: |
                 echo Hello, world!
