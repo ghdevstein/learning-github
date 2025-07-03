@@ -1,0 +1,13 @@
+name: 12-callee-wf
+on:
+  workflow_call:
+jobs:
+  callee-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a script in the callee workflow
+        run: |
+          echo "This is the callee workflow."
+          echo "You can add any steps you want here."
+          echo "For example, you can run tests, deploy code, or send notifications."
+          echo "This workflow is called by another workflow."
