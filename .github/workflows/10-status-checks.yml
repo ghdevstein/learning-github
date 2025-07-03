@@ -1,0 +1,19 @@
+# failure, success, cancelled, skipped
+name: 10 - Status Checks
+on: [push]
+jobs:
+  status-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build
+        run: |
+            echo "Running Build..."
+
+      - name: Unit Testing
+        if: success()
+        run: |
+            echo "Running Unit Testing..."
+
+      - name: Deployment
+        run: |
+            echo "Running Deployment"
