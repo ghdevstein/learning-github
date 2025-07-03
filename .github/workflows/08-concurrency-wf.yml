@@ -1,13 +1,13 @@
 name: 08 - Concurrency Workflow
 on:
   push:
+concurrency:
+  group: ABCD
+  cancel-in-progress: false    
 jobs:
     ConcurrentJob:
         name: Concurrency Demo Job
         runs-on: ubuntu-latest
-        concurrency:
-            group: ABCD
-            cancel-in-progress: false
         steps:
             - name: Run a multi-line script
               run: |
