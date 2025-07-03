@@ -12,7 +12,8 @@ jobs:
                   image: busybox
                 exclude:
                 - os: ubuntu-18.04
-                  image: python  
+                  image: python
+            max-parallel: 2        
                   
         name: job-${{ matrix.os }}-${{ matrix.image }}-${{ matrix.node-version }}
         runs-on: ${{ matrix.os }}
