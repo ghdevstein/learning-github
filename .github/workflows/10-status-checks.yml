@@ -23,4 +23,8 @@ jobs:
         run: |
             echo "Running Deployment"
     
+      - name: Generate Final Status Report
+        if: always() 
+        run: |
+            echo "Running Generate Final Status Report..."
 
