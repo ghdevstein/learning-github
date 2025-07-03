@@ -1,0 +1,15 @@
+name: 11 Trigger Another Workflow
+on:
+  workflow_run:
+    workflows: ["10 - Status Checks"]
+    types:
+      - completed
+jobs:
+  trigger-another-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Another Workflow
+        run: |
+          echo "This workflow is triggered by the completion of another workflow."
+          echo "You can add any steps you want here."
+          echo "For example, you can run tests, deploy code, or send notifications."
