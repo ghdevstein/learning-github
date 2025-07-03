@@ -28,3 +28,13 @@ jobs:
         run: |
             echo "Running Generate Final Status Report..."
 
+      - name: sleep 300
+        if: failure() 
+        run: |
+            echo "Running sleep 300..."    
+            sleep 300
+
+      - name: when cancelled
+        if: cancelled()
+        run: |
+            echo "Running when cancelled"
