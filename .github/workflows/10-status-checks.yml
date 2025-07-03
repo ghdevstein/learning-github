@@ -4,11 +4,13 @@ on: [push]
 jobs:
   status-checks:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - name: Build
         run: |
             echo "Running Build..."
             exit 1
+        continue-on-error: true    
 
       - name: Generate Error Report
         if: failure()
