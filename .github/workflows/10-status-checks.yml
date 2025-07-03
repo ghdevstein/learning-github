@@ -33,6 +33,7 @@ jobs:
         run: |
             echo "Running sleep 300..."    
             sleep 300
+        timeout-minutes: 1    
 
       - name: when cancelled
         if: cancelled()
