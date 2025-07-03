@@ -6,8 +6,14 @@ jobs:
         strategy:
             matrix:
                 os: [ubuntu-latest, ubuntu-22.04, ubuntu-18.04]
-                node-version: [16, 18]
                 image: [node, python, ruby]
+                include:
+                - os: ubuntu-latest
+                  image: busybox
+                exclude:
+                - os: ubuntu-18.04
+                  image: python  
+                  
         name: job-${{ matrix.os }}-${{ matrix.image }}-${{ matrix.node-version }}
         runs-on: ${{ matrix.os }}
         steps:
