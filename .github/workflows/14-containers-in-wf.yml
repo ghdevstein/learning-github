@@ -18,4 +18,5 @@ jobs:
         uses: docker://python:3.9
         with:
           entrypoint: python
-          args: -c "print('Hello from Python in a container!')"
+          args: |
+            print("Python version:", __import__('sys').version)
