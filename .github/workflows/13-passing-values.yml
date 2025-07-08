@@ -2,7 +2,7 @@ name: 13-passing-values
 on:
     push:
 jobs:
-  example_job:
+  example_job-01:
     runs-on: ubuntu-latest
     steps:
 
@@ -12,15 +12,14 @@ jobs:
             echo "${var1}"
             echo "This is a one-line script in the first step. ${var1}"
 
-      - name: Run a one-line script 2
-        run: | 
-            echo "Printing in second step ${var1}"
-
-      - name: Run a one-line script 3
-        run: | 
-            echo "Printing in thrid step ${var1}"
-
       - name: Run env
         run: | 
             env
-            
+
+  example_job-02:
+        runs-on: ubuntu-latest
+        steps:
+        - name: Run a one-line script 1
+          run: | 
+                echo "Trying to print ${var1}"
+
