@@ -19,3 +19,8 @@ jobs:
       - name: Run a one-line script 3
         run: | 
             echo "Printing in thrid step ${var1}"
+
+      - name: Run env
+        run: | 
+            env
+            
