@@ -6,9 +6,13 @@ on:
 jobs:
   example_job-01:
     runs-on: ubuntu-latest
+    container:
+        image: python:3.10
     steps:
       - name: Run a one-line script
-        run: echo "Hello, World!"
+        run: |
+            echo "Hello, World!"
+            python --version
     
       - name: run python code in a container
         uses: docker://python:3.9
