@@ -16,6 +16,18 @@ jobs:
         run: | 
             env
 
+      - name: Run a one-line script 2
+        id: var2-step
+        run: | 
+            echo "var2=GitHub Actions Class" >> $GITHUB_OUTPUT
+            echo "Value of var2 is ${var2}"
+
+      - name: Run a one-line script 3
+        run: | 
+            echo "$var1
+            echo "Value of var2 is ${{ steps.var2-step.outputs.var2 }}"
+
+
   example_job-02:
         runs-on: ubuntu-latest
         needs: example_job-01
