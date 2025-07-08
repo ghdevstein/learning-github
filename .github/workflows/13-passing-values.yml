@@ -2,8 +2,11 @@ name: 13-passing-values
 on:
     push:
 jobs:
+    
   example_job-01:
     runs-on: ubuntu-latest
+    outputs:
+      example-job-var2: ${{ steps.var2-step.outputs.var2 }}
     steps:
 
       - name: Run a one-line script 1
@@ -35,4 +38,8 @@ jobs:
         - name: Run a one-line script 1
           run: | 
                 echo "Trying to print ${var1}"
+
+        - name: Run a one-line script 2
+          run: | 
+                echo "Trying to print ${{ needs.example_job-01.outputs.example-job-var2 }}"                
 
