@@ -8,9 +8,14 @@ jobs:
 
       - name: Run a one-line script 1
         run: | 
-            var1=Hello
+            echo "var1=Hello World" >> $GITHUB_ENV
             echo "${var1}"
+            echo "This is a one-line script in the first step. ${var1}"
 
       - name: Run a one-line script 2
         run: | 
             echo "Printing in second step ${var1}"
+
+      - name: Run a one-line script 3
+        run: | 
+            echo "Printing in thrid step ${var1}"
