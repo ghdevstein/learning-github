@@ -24,7 +24,7 @@ jobs:
 
       - name: Run a one-line script 3
         run: | 
-            echo "$var1
+            echo "$var1"
             echo "Value of var2 is ${{ steps.var2-step.outputs.var2 }}"
 
 
