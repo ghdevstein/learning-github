@@ -1,0 +1,16 @@
+name: 13-passing-values
+on:
+    push:
+jobs:
+  example_job:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Run a one-line script 1
+        run: | 
+            var1=Hello
+            echo "${var1}"
+
+      - name: Run a one-line script 2
+        run: | 
+            echo "Printing in second step ${var1}"
