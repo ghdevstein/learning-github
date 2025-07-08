@@ -9,6 +9,9 @@ jobs:
     container:
         image: python:3.10
     steps:
+      - name: check out the code
+        uses: actions/checkout@v3
+        
       - name: Run a one-line script
         run: |
             echo "Hello, World!"
@@ -19,4 +22,4 @@ jobs:
         with:
           entrypoint: python
           args: |
-            print("Python version:", __import__('sys').version)
+            -c print("Python version:", __import__('sys').version)
