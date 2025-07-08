@@ -1,0 +1,17 @@
+# step level container
+
+name: 14-containers-in-wf
+on:
+  push:
+jobs:
+  example_job-01:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo "Hello, World!"
+    
+      - name: run python code in a container
+        uses: docker://python:3.9
+        with:
+          entrypoint: python
+          args: -c "print('Hello from Python in a container!')"
