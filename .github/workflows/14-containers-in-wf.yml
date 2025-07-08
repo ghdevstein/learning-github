@@ -18,8 +18,8 @@ jobs:
             python --version
     
       - name: run python code in a container
-        uses: docker://python:3.9
+        uses: docker://ubuntu:latest
         with:
-          entrypoint: python
-          args: |
-            -c print("Python version:", __import__('sys').version)
+          entrypoint: bash
+          run: |
+             ls -ltra
