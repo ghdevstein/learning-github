@@ -1,5 +1,10 @@
 name: python setup composite action
 description: A composite action to set up Python environment
+inputs:
+  packages:
+    description: 'List of Python packages to install'
+    required: false
+    default: 'pandas'
 runs:
   using: "composite"
   steps:
@@ -16,8 +21,7 @@ runs:
         
     - name: Install dependencies
       run: |
-        pip install pandas
-        pip install numpy
+        pip install ${{ inputs.packages }}
       shell: bash  
     
     - name: List the installed packages
