@@ -1,0 +1,14 @@
+name: 15-calling-composite-action
+on: [push]
+jobs:
+  call-composite-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+        
+      - name: Call the composite action
+        uses: ./.github/actions/python-setup
+        with:
+          python-version: 3.10
+          
