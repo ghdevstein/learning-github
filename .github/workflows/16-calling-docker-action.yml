@@ -1,0 +1,13 @@
+name: 16-calling-docker-action
+on: [push]
+jobs:
+  call-docker-action:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v4
+
+      - name: Call the Docker action
+        uses: ./.github/actions/greeting
+        with:
+          user: 'Aspire CloudOps Team'
