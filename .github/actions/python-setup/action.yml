@@ -3,9 +3,7 @@ description: A composite action to set up Python environment
 runs:
   using: "composite"
   steps:
-    - name: checkout repository
-      uses: actions/checkout@v4
-      
+
     - name: Printing the Actor Name
       run: |
         echo "The actor name is: ${{ github.actor }}"
@@ -19,7 +17,9 @@ runs:
       run: |
         pip install pandas
         pip install numpy
+      shell: bash  
     
     - name: List the installed packages
       run: |
         pip list
+      shell: bash
