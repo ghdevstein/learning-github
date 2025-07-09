@@ -7,6 +7,7 @@ runs:
     - name: Printing the Actor Name
       run: |
         echo "The actor name is: ${{ github.actor }}"
+      shell: bash  
 
     - name: Set up Python
       uses: actions/setup-python@v4
