@@ -4,9 +4,10 @@ inputs:
   user:
     description: 'Name of the person to greet'
     required: true
+    type: string
     default: 'Welcome GitHub User'
 runs:
   using: "docker"
   image: "Dockerfile"
   args:
-    user: ${{ inputs.user }}
+    - ${{ inputs.user }}
