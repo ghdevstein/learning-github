@@ -22,3 +22,5 @@ jobs:
             - name: Run a single-line script
               run: echo Hello, world! single line
 
+            - name: Checkout code
+              uses: actions/checkout@v2              
