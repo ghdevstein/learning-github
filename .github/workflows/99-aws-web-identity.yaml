@@ -1,0 +1,13 @@
+name: 99-aws-web-identity
+on:
+  push:
+jobs:
+  access_check:
+    name: Check AWS Access
+    steps:
+          - name: Configure AWS credentials
+            uses: aws-actions/configure-aws-credentials@v4
+            with:
+              role-to-assume: arn:aws:iam::588118818861:oidc-provider/token.actions.githubusercontent.com
+              role-session-name: Github_Devops_Role
+              aws-region: us-east-2
